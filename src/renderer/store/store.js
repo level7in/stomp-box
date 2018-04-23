@@ -29,6 +29,8 @@ const store = new Vuex.Store({
     isSetting: false,
     // 任务信息刷新间隔
     heart: 2000,
+    // 项目选择
+    // checkedNames: [],
     // 菜单面板选项 => TaskMenu.vue
     menuItems: [
       {

@@ -1,8 +1,10 @@
 <template>
-  <div class="task-panel-item">
+
+  <label class="task-panel-item" :for="'id-' + index">
     <span class="between">
       <div>
-        {{DownloadItem.files[0].path}}
+        <!--任务名-->
+        {{typeJudge}}
       </div>
       <a>
         {{(DownloadItem.uploadLength / DownloadItem.totalLength *100).toFixed(1) }}% |
@@ -34,7 +36,8 @@
       {{ '||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||'.slice(0,(DownloadItem.completedLength / DownloadItem.totalLength *100).toFixed()) }}
     </span>
 
-  </div>
+  </label>
+
 </template>
 
 <script>
@@ -49,15 +52,27 @@
           type: Number,
           required: true
         }
+      },
+      computed: {
+        typeJudge () {
+          if (this.DownloadItem.hasOwnProperty('bittorrent')) {
+            return this.DownloadItem.bittorrent.info.name
+          } else if (this.DownloadItem.files[0].path !== '') {
+            return this.DownloadItem.files[0].path.slice(this.DownloadItem.dir.length + 1)
+          } else {
+            return `错误信息：${this.DownloadItem.errorMessage}`
+          }
+        }
       }
     }
 </script>
 
 <style lang="scss" scoped>
 .task-panel-item{
-  width: calc(100% - 50px);
+  font-size: 13px;
+  width:95%;
   height: auto;
-  margin:20px auto;
+  margin:15px auto;
   padding: 10px 20px;
   display: flex;
   flex-direction: column;
@@ -66,14 +81,15 @@
   border-radius: 5px;
   border-bottom: 1px solid #ddd;
   box-shadow: rgba(84, 70, 35, 0.3) 0px 6px 20px, rgba(84, 70, 35, 0.14) 0px 1px 3px, rgba(0, 0, 0, 0.08) 0px 0px 1px;
-
+  box-sizing: border-box;
+  cursor:default;
   &:hover{
-    /*box-shadow: 0 3px 8px #d3ddeb;*/
-    box-shadow: rgba(84, 70, 35, 0.3) 0px 6px 20px, rgba(84, 70, 35, 0.14) 0px 1px 3px, rgba(0, 0, 0, 0.08) 0px 0px 1px;
-    background-color: rgba(9, 30, 66, 0.04);
-    transition: all 200ms ;
+    border-left: solid 7px #000;
+    padding-left: 13px;
+    transition: all .2s ;
   }
 }
+
 .between{
   width: 100%;
   display: inline-flex;

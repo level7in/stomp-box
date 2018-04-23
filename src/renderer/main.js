@@ -16,11 +16,3 @@ new Vue({
   store,
   render: h => h(App)
 })
-
-/* eslint-disable no-new */
-// new Vue({
-//   components: { App },
-//   router,
-//   store,
-//   template: '<App/>'
-// }).$mount('#app')

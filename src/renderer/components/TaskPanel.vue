@@ -1,8 +1,23 @@
 <template>
     <div class="task-panel">
-      <task-panel-item v-for="(DownloadItem,index) in DownloadResult" :key="index" :index="index" :DownloadItem="DownloadItem"></task-panel-item>
+      <span>{{checkedNames}}</span>
+      <span v-for="(DownloadItem,index) in DownloadResult">
+        <input
+                type="checkbox"
+                :key="index+'id'"
+                class="download-item"
+                :id="'id-' + index"
+                :value ="DownloadItem.gid"
+                v-model="checkedNames">
+        <!--下载卡片-->
+        <task-panel-item
+                :key="index" :index="index"
+                :DownloadItem="DownloadItem" >
 
-      <!--<task-panel-item></task-panel-item>-->
+        </task-panel-item>
+      </span>
+
+
 
     </div>
 </template>
@@ -16,7 +31,8 @@
     name: 'TaskPanel',
     data () {
       return {
-        DownloadResult: this.$store.state.DownloadResult
+        DownloadResult: this.$store.state.DownloadResult,
+        checkedNames: []
       }
     }
 
@@ -25,11 +41,19 @@
 
 <style lang="scss" scoped>
   @import "../../variable";
-.task-panel{
-  background-color: $main-color;
-  flex-direction: column;
-  /*align-items: center;*/
-  flex: 1;
-  overflow-y: scroll;
-}
+  .task-panel{
+    background-color: $main-color;
+    flex-direction: column;
+    /*align-items: center;*/
+    flex: 1;
+    overflow-y: scroll;
+  }
+  .download-item{
+    display: none;
+    &:checked + label {
+      border-left: solid 7px #4C9AFE;
+      padding-left: 13px;
+      transition: all .2s ;
+    }
+  }
 </style>

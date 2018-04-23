@@ -54,7 +54,7 @@ export default {
 
 <style scoped>
   .between{
-    width: 63px;
+    width: 67px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
