@@ -55,12 +55,17 @@
       },
       computed: {
         typeJudge () {
-          if (this.DownloadItem.hasOwnProperty('bittorrent')) {
+          if (this.DownloadItem.hasOwnProperty('bittorrent') && this.DownloadItem.bittorrent.hasOwnProperty('info')) {
+            // bt 信息
             return this.DownloadItem.bittorrent.info.name
-          } else if (this.DownloadItem.files[0].path !== '') {
-            return this.DownloadItem.files[0].path.slice(this.DownloadItem.dir.length + 1)
+          } else if (this.DownloadItem.errorCode !== '0' && this.DownloadItem.hasOwnProperty('errorCode')) {
+            // 错误
+            return `错误 (${this.DownloadItem.errorCode})：${this.DownloadItem.errorMessage}`
+          } else if (this.DownloadItem.files[0].path.indexOf('[METADATA]') === 0) {
+            // 磁力链接元数据
+            return this.DownloadItem.files[0].path
           } else {
-            return `错误信息：${this.DownloadItem.errorMessage}`
+            return this.DownloadItem.files[0].path.slice(this.DownloadItem.dir.length + 1)
           }
         }
       }
@@ -83,9 +88,11 @@
   box-shadow: rgba(84, 70, 35, 0.3) 0px 6px 20px, rgba(84, 70, 35, 0.14) 0px 1px 3px, rgba(0, 0, 0, 0.08) 0px 0px 1px;
   box-sizing: border-box;
   cursor:default;
-  &:hover{
+  &:hover:before{
+    content: '';
     border-left: solid 7px #000;
-    padding-left: 13px;
+    position: absolute;
+    /*padding-left: 13px;*/
     transition: all .2s ;
   }
 }

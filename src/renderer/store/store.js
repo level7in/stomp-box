@@ -4,8 +4,9 @@ import Aria2 from 'aria2'
 // 引入Vuex-状态管理
 Vue.use(Vuex)
 const options = [
-  {'host': '192.168.123.1', 'port': 6800, 'secure': false},
-  {'host': '127.0.0.1', 'port': 6800, 'secure': false, 'secret': '7in'}
+  {'host': 'localhost', 'port': 6806, 'secure': false},
+  {'host': '192.168.123.1', 'port': 6800, 'secure': false}
+  // {'host': '127.0.0.1', 'port': 6800, 'secure': false, 'secret': '7in'}
 ]
 const aria2 = new Aria2(options[0])
 

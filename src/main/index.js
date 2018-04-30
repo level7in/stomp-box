@@ -1,7 +1,7 @@
 'use strict'
 
 import { app, BrowserWindow } from 'electron'
-
+import { exec } from 'child_process'
 /**
  * Set `__static` path to static files in production
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
@@ -23,7 +23,10 @@ function createWindow () {
     height: 563,
     useContentSize: true,
     width: 1000,
-    titleBarStyle: 'hidden'
+    titleBarStyle: 'hidden',
+    // transparent: true,
+    // frame: false,
+    webPreferences: { experimentalFeatures: true }
   })
 
   mainWindow.loadURL(winURL)
@@ -46,7 +49,15 @@ app.on('activate', () => {
     createWindow()
   }
 })
-
+// aria2 线程
+exec(`./static/aria2c --conf-path="./static/.aria2/aria2.conf" `, function (error, stdout, stderr) {
+  if (error) {
+    console.error('error: ' + error)
+    return
+  }
+  console.log('stdout: ' + stdout)
+  console.log('stderr: ' + typeof stderr)
+})
 /**
  * Auto Updater
  *

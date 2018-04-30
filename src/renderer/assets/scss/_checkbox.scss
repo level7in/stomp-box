@@ -1,0 +1,58 @@
+$width: 40px;
+$height: 25px;
+$border-width: 3px;
+$color-checked: #4C9AFE;
+$color-unchecked: #7f7f7f;
+$color-disabled: #eee;
+.switch {
+  width: 60px;
+  height: $height;
+  margin: 10px 0;
+  vertical-align: middle;
+  position: relative;
+}
+.switch-checkbox {
+  display: none;
+}
+.switch-label {
+  background: $color-unchecked;
+  width: $width - $border-width * 2;
+  height: $height - $border-width * 2;
+  border: $border-width solid $color-unchecked;
+  border-radius: $height;
+  display: block;
+  transition: all 600ms cubic-bezier(0.23, 1, 0.32, 1);;
+}
+.switch-label:before {
+  content: "";
+  display: block;
+  background-color: #fff;
+  width: $height - $border-width * 2;
+  height: $height - $border-width * 2;
+  border-radius: $height - $border-width * 2;
+  line-height: $height - $border-width * 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: $border-width solid $color-unchecked;
+  transition: all 600ms cubic-bezier(0.23, 1, 0.32, 1);;
+}
+.switch-checkbox:checked + .switch-label,
+.switch-checkbox:checked + .switch-label:before {
+  border-color: $color-checked;
+}
+.switch-checkbox:checked + .switch-label:before {
+  left: $height - 10px;
+}
+.switch-checkbox:checked + .switch-label {
+  background-color: $color-checked;
+}
+
+.switch-checkbox:disabled + .switch-label {
+  background-color: #eee;
+  border-color: #eee;
+}
+.switch-checkbox:disabled + .switch-label:before {
+  border-color: $color-disabled;
+  background-color: $color-disabled;
+}

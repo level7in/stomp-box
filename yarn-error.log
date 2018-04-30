@@ -1,17 +1,26 @@
 Arguments: 
-  /Users/qin/.nvm/versions/node/v9.5.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js run build -all
+  /Users/qin/.nvm/versions/node/v9.5.0/bin/node /usr/local/Cellar/yarn/1.6.0/libexec/bin/yarn.js run dev
 
 PATH: 
   /Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/bin:/Users/qin/.nvm/versions/node/v9.5.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/aria2/bin:/opt/ImageMagick/bin:/Applications/Wireshark.app/Contents/MacOS
 
 Yarn version: 
-  1.5.1
+  1.6.0
 
 Node version: 
   9.5.0
 
 Platform: 
   darwin x64
+
+Trace: 
+  SyntaxError: /Users/qin/WebstormProjects/stomp-box/package.json: Unexpected token / in JSON at position 2497
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.6.0/libexec/lib/cli.js:1130:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.6.0/libexec/lib/cli.js:98:30)
+      at /usr/local/Cellar/yarn/1.6.0/libexec/lib/cli.js:109:13
+      at <anonymous>
 
 npm manifest: 
   {
@@ -96,15 +105,15 @@ npm manifest:
       "electron-builder": "^19.19.1",
       "electron-debug": "^1.4.0",
       "electron-devtools-installer": "^2.2.0",
-      "eslint": "^4.4.1",
-      "eslint-config-standard": "^10.2.1",
-      "eslint-friendly-formatter": "^3.0.0",
-      "eslint-loader": "^1.9.0",
-      "eslint-plugin-html": "^3.1.1",
-      "eslint-plugin-import": "^2.7.0",
-      "eslint-plugin-node": "^5.1.1",
-      "eslint-plugin-promise": "^3.5.0",
-      "eslint-plugin-standard": "^3.0.1",
+  //    "eslint": "^4.4.1",
+  //    "eslint-config-standard": "^10.2.1",
+  //    "eslint-friendly-formatter": "^3.0.0",
+  //    "eslint-loader": "^1.9.0",
+  //    "eslint-plugin-html": "^3.1.1",
+  //    "eslint-plugin-import": "^2.7.0",
+  //    "eslint-plugin-node": "^5.1.1",
+  //    "eslint-plugin-promise": "^3.5.0",
+  //    "eslint-plugin-standard": "^3.0.1",
       "extract-text-webpack-plugin": "^3.0.0",
       "file-loader": "^0.11.2",
       "html-webpack-plugin": "^2.30.1",
@@ -8085,18 +8094,3 @@ Lockfile:
     resolved "http://registry.npm.taobao.org/yauzl/download/yauzl-2.4.1.tgz#9528f442dab1b2284e58b4379bb194e22e0c4005"
     dependencies:
       fd-slicer "~1.0.1"
-
-Trace: 
-  Error: Command failed.
-  Exit code: 1
-  Command: sh
-  Arguments: -c node .electron-vue/build.js && electron-builder -all
-  Directory: /Users/qin/WebstormProjects/stomp-box
-  Output:
-  
-      at ProcessTermError.MessageError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:186:110)
-      at new ProcessTermError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:226:113)
-      at ChildProcess.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:30281:17)
-      at ChildProcess.emit (events.js:160:13)
-      at maybeClose (internal/child_process.js:943:16)
-      at Process.ChildProcess._handle.onexit (internal/child_process.js:220:5)

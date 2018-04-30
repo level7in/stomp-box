@@ -1,0 +1,139 @@
+2018-04-29 14:49:08.221343 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv4 RPC: listening on TCP port 6800
+2018-04-29 14:49:08.221631 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv6 RPC: listening on TCP port 6800
+2018-04-29 15:07:04.898393 [NOTICE] [../../../src/DownloadEngine.cc:248] Shutdown sequence commencing... Press Ctrl-C again for emergency shutdown.
+2018-04-29 15:07:04.902080 [NOTICE] [../../../src/MultiUrlRequestInfo.cc:342] Serialized session to './static/.aria2/aria2.session' successfully.
+2018-04-29 15:09:51.562403 [WARN] [../../../src/DownloadEngineFactory.cc:201] Neither --rpc-secret nor a combination of --rpc-user and --rpc-passwd is set. This is insecure. It is extremely recommended to specify --rpc-secret with the adequate secrecy or now deprecated --rpc-user and --rpc-passwd.
+2018-04-29 15:09:51.563967 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv4 RPC: listening on TCP port 6806
+2018-04-29 15:09:51.564042 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv6 RPC: listening on TCP port 6806
+2018-04-29 15:49:36.908074 [WARN] [../../../src/DownloadEngineFactory.cc:201] Neither --rpc-secret nor a combination of --rpc-user and --rpc-passwd is set. This is insecure. It is extremely recommended to specify --rpc-secret with the adequate secrecy or now deprecated --rpc-user and --rpc-passwd.
+2018-04-29 15:49:36.909463 [ERROR] [../../../src/HttpListenCommand.cc:112] IPv4 RPC: failed to bind TCP port 6806
+Exception: [../../../src/SocketCore.cc:312] errorCode=1 Failed to bind a socket, cause: Address already in use
+2018-04-29 15:49:36.909808 [ERROR] [../../../src/HttpListenCommand.cc:112] IPv6 RPC: failed to bind TCP port 6806
+Exception: [../../../src/SocketCore.cc:312] errorCode=1 Failed to bind a socket, cause: Address already in use
+2018-04-29 15:49:36.910929 [ERROR] [../../../src/MultiUrlRequestInfo.cc:297] Exception caught
+Exception: [../../../src/DownloadEngineFactory.cc:219] errorCode=1 Failed to setup RPC server.
+2018-04-29 15:49:57.513918 [NOTICE] [../../../src/DownloadEngine.cc:248] Shutdown sequence commencing... Press Ctrl-C again for emergency shutdown.
+2018-04-29 15:49:57.515690 [NOTICE] [../../../src/MultiUrlRequestInfo.cc:342] Serialized session to './static/.aria2/aria2.session' successfully.
+2018-04-29 15:50:10.821466 [WARN] [../../../src/DownloadEngineFactory.cc:201] Neither --rpc-secret nor a combination of --rpc-user and --rpc-passwd is set. This is insecure. It is extremely recommended to specify --rpc-secret with the adequate secrecy or now deprecated --rpc-user and --rpc-passwd.
+2018-04-29 15:50:10.821703 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv4 RPC: listening on TCP port 6806
+2018-04-29 15:50:10.821757 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv6 RPC: listening on TCP port 6806
+2018-04-29 16:52:14.169365 [WARN] [../../../src/DownloadEngineFactory.cc:201] Neither --rpc-secret nor a combination of --rpc-user and --rpc-passwd is set. This is insecure. It is extremely recommended to specify --rpc-secret with the adequate secrecy or now deprecated --rpc-user and --rpc-passwd.
+2018-04-29 16:52:14.174140 [ERROR] [../../../src/HttpListenCommand.cc:112] IPv4 RPC: failed to bind TCP port 6806
+Exception: [../../../src/SocketCore.cc:312] errorCode=1 Failed to bind a socket, cause: Address already in use
+2018-04-29 16:52:14.174243 [ERROR] [../../../src/HttpListenCommand.cc:112] IPv6 RPC: failed to bind TCP port 6806
+Exception: [../../../src/SocketCore.cc:312] errorCode=1 Failed to bind a socket, cause: Address already in use
+2018-04-29 16:52:14.174324 [ERROR] [../../../src/MultiUrlRequestInfo.cc:297] Exception caught
+Exception: [../../../src/DownloadEngineFactory.cc:219] errorCode=1 Failed to setup RPC server.
+2018-04-29 16:52:43.858927 [NOTICE] [../../../src/DownloadEngine.cc:248] Shutdown sequence commencing... Press Ctrl-C again for emergency shutdown.
+2018-04-29 16:52:43.859832 [NOTICE] [../../../src/MultiUrlRequestInfo.cc:342] Serialized session to './static/.aria2/aria2.session' successfully.
+2018-04-29 16:52:51.490379 [WARN] [../../../src/DownloadEngineFactory.cc:201] Neither --rpc-secret nor a combination of --rpc-user and --rpc-passwd is set. This is insecure. It is extremely recommended to specify --rpc-secret with the adequate secrecy or now deprecated --rpc-user and --rpc-passwd.
+2018-04-29 16:52:51.490721 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv4 RPC: listening on TCP port 6806
+2018-04-29 16:52:51.490799 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv6 RPC: listening on TCP port 6806
+2018-04-29 16:53:28.868306 [NOTICE] [../../../src/DownloadEngine.cc:248] Shutdown sequence commencing... Press Ctrl-C again for emergency shutdown.
+2018-04-29 16:53:28.871189 [NOTICE] [../../../src/MultiUrlRequestInfo.cc:342] Serialized session to './static/.aria2/aria2.session' successfully.
+2018-04-29 16:53:36.522364 [WARN] [../../../src/DownloadEngineFactory.cc:201] Neither --rpc-secret nor a combination of --rpc-user and --rpc-passwd is set. This is insecure. It is extremely recommended to specify --rpc-secret with the adequate secrecy or now deprecated --rpc-user and --rpc-passwd.
+2018-04-29 16:53:36.522655 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv4 RPC: listening on TCP port 6806
+2018-04-29 16:53:36.522722 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv6 RPC: listening on TCP port 6806
+2018-04-29 16:54:20.256035 [WARN] [../../../src/DownloadEngineFactory.cc:201] Neither --rpc-secret nor a combination of --rpc-user and --rpc-passwd is set. This is insecure. It is extremely recommended to specify --rpc-secret with the adequate secrecy or now deprecated --rpc-user and --rpc-passwd.
+2018-04-29 16:54:20.256396 [ERROR] [../../../src/HttpListenCommand.cc:112] IPv4 RPC: failed to bind TCP port 6806
+Exception: [../../../src/SocketCore.cc:312] errorCode=1 Failed to bind a socket, cause: Address already in use
+2018-04-29 16:54:20.256488 [ERROR] [../../../src/HttpListenCommand.cc:112] IPv6 RPC: failed to bind TCP port 6806
+Exception: [../../../src/SocketCore.cc:312] errorCode=1 Failed to bind a socket, cause: Address already in use
+2018-04-29 16:54:20.256568 [ERROR] [../../../src/MultiUrlRequestInfo.cc:297] Exception caught
+Exception: [../../../src/DownloadEngineFactory.cc:219] errorCode=1 Failed to setup RPC server.
+2018-04-29 16:59:22.277982 [WARN] [../../../src/DownloadEngineFactory.cc:201] Neither --rpc-secret nor a combination of --rpc-user and --rpc-passwd is set. This is insecure. It is extremely recommended to specify --rpc-secret with the adequate secrecy or now deprecated --rpc-user and --rpc-passwd.
+2018-04-29 16:59:22.278750 [ERROR] [../../../src/HttpListenCommand.cc:112] IPv4 RPC: failed to bind TCP port 6806
+Exception: [../../../src/SocketCore.cc:312] errorCode=1 Failed to bind a socket, cause: Address already in use
+2018-04-29 16:59:22.278866 [ERROR] [../../../src/HttpListenCommand.cc:112] IPv6 RPC: failed to bind TCP port 6806
+Exception: [../../../src/SocketCore.cc:312] errorCode=1 Failed to bind a socket, cause: Address already in use
+2018-04-29 16:59:22.278929 [ERROR] [../../../src/MultiUrlRequestInfo.cc:297] Exception caught
+Exception: [../../../src/DownloadEngineFactory.cc:219] errorCode=1 Failed to setup RPC server.
+2018-04-29 16:59:48.497521 [WARN] [../../../src/DownloadEngineFactory.cc:201] Neither --rpc-secret nor a combination of --rpc-user and --rpc-passwd is set. This is insecure. It is extremely recommended to specify --rpc-secret with the adequate secrecy or now deprecated --rpc-user and --rpc-passwd.
+2018-04-29 16:59:48.497797 [ERROR] [../../../src/HttpListenCommand.cc:112] IPv4 RPC: failed to bind TCP port 6806
+Exception: [../../../src/SocketCore.cc:312] errorCode=1 Failed to bind a socket, cause: Address already in use
+2018-04-29 16:59:48.497872 [ERROR] [../../../src/HttpListenCommand.cc:112] IPv6 RPC: failed to bind TCP port 6806
+Exception: [../../../src/SocketCore.cc:312] errorCode=1 Failed to bind a socket, cause: Address already in use
+2018-04-29 16:59:48.497936 [ERROR] [../../../src/MultiUrlRequestInfo.cc:297] Exception caught
+Exception: [../../../src/DownloadEngineFactory.cc:219] errorCode=1 Failed to setup RPC server.
+2018-04-29 17:01:48.992039 [WARN] [../../../src/DownloadEngineFactory.cc:201] Neither --rpc-secret nor a combination of --rpc-user and --rpc-passwd is set. This is insecure. It is extremely recommended to specify --rpc-secret with the adequate secrecy or now deprecated --rpc-user and --rpc-passwd.
+2018-04-29 17:01:48.992470 [ERROR] [../../../src/HttpListenCommand.cc:112] IPv4 RPC: failed to bind TCP port 6806
+Exception: [../../../src/SocketCore.cc:312] errorCode=1 Failed to bind a socket, cause: Address already in use
+2018-04-29 17:01:48.992553 [ERROR] [../../../src/HttpListenCommand.cc:112] IPv6 RPC: failed to bind TCP port 6806
+Exception: [../../../src/SocketCore.cc:312] errorCode=1 Failed to bind a socket, cause: Address already in use
+2018-04-29 17:01:48.992616 [ERROR] [../../../src/MultiUrlRequestInfo.cc:297] Exception caught
+Exception: [../../../src/DownloadEngineFactory.cc:219] errorCode=1 Failed to setup RPC server.
+2018-04-29 17:02:03.544051 [WARN] [../../../src/DownloadEngineFactory.cc:201] Neither --rpc-secret nor a combination of --rpc-user and --rpc-passwd is set. This is insecure. It is extremely recommended to specify --rpc-secret with the adequate secrecy or now deprecated --rpc-user and --rpc-passwd.
+2018-04-29 17:02:03.544771 [ERROR] [../../../src/HttpListenCommand.cc:112] IPv4 RPC: failed to bind TCP port 6806
+Exception: [../../../src/SocketCore.cc:312] errorCode=1 Failed to bind a socket, cause: Address already in use
+2018-04-29 17:02:03.545128 [ERROR] [../../../src/HttpListenCommand.cc:112] IPv6 RPC: failed to bind TCP port 6806
+Exception: [../../../src/SocketCore.cc:312] errorCode=1 Failed to bind a socket, cause: Address already in use
+2018-04-29 17:02:03.550577 [ERROR] [../../../src/MultiUrlRequestInfo.cc:297] Exception caught
+Exception: [../../../src/DownloadEngineFactory.cc:219] errorCode=1 Failed to setup RPC server.
+2018-04-29 17:02:18.054314 [WARN] [../../../src/DownloadEngineFactory.cc:201] Neither --rpc-secret nor a combination of --rpc-user and --rpc-passwd is set. This is insecure. It is extremely recommended to specify --rpc-secret with the adequate secrecy or now deprecated --rpc-user and --rpc-passwd.
+2018-04-29 17:02:18.054592 [ERROR] [../../../src/HttpListenCommand.cc:112] IPv4 RPC: failed to bind TCP port 6806
+Exception: [../../../src/SocketCore.cc:312] errorCode=1 Failed to bind a socket, cause: Address already in use
+2018-04-29 17:02:18.054681 [ERROR] [../../../src/HttpListenCommand.cc:112] IPv6 RPC: failed to bind TCP port 6806
+Exception: [../../../src/SocketCore.cc:312] errorCode=1 Failed to bind a socket, cause: Address already in use
+2018-04-29 17:02:18.054761 [ERROR] [../../../src/MultiUrlRequestInfo.cc:297] Exception caught
+Exception: [../../../src/DownloadEngineFactory.cc:219] errorCode=1 Failed to setup RPC server.
+2018-04-29 17:02:51.403257 [WARN] [../../../src/DownloadEngineFactory.cc:201] Neither --rpc-secret nor a combination of --rpc-user and --rpc-passwd is set. This is insecure. It is extremely recommended to specify --rpc-secret with the adequate secrecy or now deprecated --rpc-user and --rpc-passwd.
+2018-04-29 17:02:51.403587 [ERROR] [../../../src/HttpListenCommand.cc:112] IPv4 RPC: failed to bind TCP port 6806
+Exception: [../../../src/SocketCore.cc:312] errorCode=1 Failed to bind a socket, cause: Address already in use
+2018-04-29 17:02:51.403673 [ERROR] [../../../src/HttpListenCommand.cc:112] IPv6 RPC: failed to bind TCP port 6806
+Exception: [../../../src/SocketCore.cc:312] errorCode=1 Failed to bind a socket, cause: Address already in use
+2018-04-29 17:02:51.403748 [ERROR] [../../../src/MultiUrlRequestInfo.cc:297] Exception caught
+Exception: [../../../src/DownloadEngineFactory.cc:219] errorCode=1 Failed to setup RPC server.
+2018-04-29 17:03:18.933093 [WARN] [../../../src/DownloadEngineFactory.cc:201] Neither --rpc-secret nor a combination of --rpc-user and --rpc-passwd is set. This is insecure. It is extremely recommended to specify --rpc-secret with the adequate secrecy or now deprecated --rpc-user and --rpc-passwd.
+2018-04-29 17:03:18.933388 [ERROR] [../../../src/HttpListenCommand.cc:112] IPv4 RPC: failed to bind TCP port 6806
+Exception: [../../../src/SocketCore.cc:312] errorCode=1 Failed to bind a socket, cause: Address already in use
+2018-04-29 17:03:18.933503 [ERROR] [../../../src/HttpListenCommand.cc:112] IPv6 RPC: failed to bind TCP port 6806
+Exception: [../../../src/SocketCore.cc:312] errorCode=1 Failed to bind a socket, cause: Address already in use
+2018-04-29 17:03:18.933578 [ERROR] [../../../src/MultiUrlRequestInfo.cc:297] Exception caught
+Exception: [../../../src/DownloadEngineFactory.cc:219] errorCode=1 Failed to setup RPC server.
+2018-04-29 22:21:10.773983 [NOTICE] [../../../src/DownloadEngine.cc:257] Emergency shutdown sequence commencing...
+2018-04-29 22:21:10.776622 [NOTICE] [../../../src/MultiUrlRequestInfo.cc:342] Serialized session to './static/.aria2/aria2.session' successfully.
+2018-04-30 12:37:58.256897 [WARN] [../../../src/DownloadEngineFactory.cc:201] Neither --rpc-secret nor a combination of --rpc-user and --rpc-passwd is set. This is insecure. It is extremely recommended to specify --rpc-secret with the adequate secrecy or now deprecated --rpc-user and --rpc-passwd.
+2018-04-30 12:37:58.258454 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv4 RPC: listening on TCP port 6806
+2018-04-30 12:37:58.258546 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv6 RPC: listening on TCP port 6806
+2018-04-30 15:23:16.305021 [NOTICE] [../../../src/DownloadEngine.cc:248] Shutdown sequence commencing... Press Ctrl-C again for emergency shutdown.
+2018-04-30 15:23:16.308740 [NOTICE] [../../../src/MultiUrlRequestInfo.cc:342] Serialized session to './static/.aria2/aria2.session' successfully.
+2018-04-30 16:39:55.256661 [WARN] [../../../src/DownloadEngineFactory.cc:201] Neither --rpc-secret nor a combination of --rpc-user and --rpc-passwd is set. This is insecure. It is extremely recommended to specify --rpc-secret with the adequate secrecy or now deprecated --rpc-user and --rpc-passwd.
+2018-04-30 16:39:55.257618 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv4 RPC: listening on TCP port 6806
+2018-04-30 16:39:55.257700 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv6 RPC: listening on TCP port 6806
+2018-04-30 18:27:16.747185 [NOTICE] [../../../src/DownloadEngine.cc:248] Shutdown sequence commencing... Press Ctrl-C again for emergency shutdown.
+2018-04-30 18:27:16.751362 [NOTICE] [../../../src/MultiUrlRequestInfo.cc:342] Serialized session to './static/.aria2/aria2.session' successfully.
+2018-04-30 18:31:28.468902 [WARN] [../../../src/DownloadEngineFactory.cc:201] Neither --rpc-secret nor a combination of --rpc-user and --rpc-passwd is set. This is insecure. It is extremely recommended to specify --rpc-secret with the adequate secrecy or now deprecated --rpc-user and --rpc-passwd.
+2018-04-30 18:31:28.469214 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv4 RPC: listening on TCP port 6806
+2018-04-30 18:31:28.469283 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv6 RPC: listening on TCP port 6806
+2018-04-30 20:26:49.161077 [NOTICE] [../../../src/DownloadEngine.cc:248] Shutdown sequence commencing... Press Ctrl-C again for emergency shutdown.
+2018-04-30 20:26:49.166058 [NOTICE] [../../../src/MultiUrlRequestInfo.cc:342] Serialized session to './static/.aria2/aria2.session' successfully.
+2018-04-30 20:35:32.278871 [WARN] [../../../src/DownloadEngineFactory.cc:201] Neither --rpc-secret nor a combination of --rpc-user and --rpc-passwd is set. This is insecure. It is extremely recommended to specify --rpc-secret with the adequate secrecy or now deprecated --rpc-user and --rpc-passwd.
+2018-04-30 20:35:32.280997 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv4 RPC: listening on TCP port 6806
+2018-04-30 20:35:32.281221 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv6 RPC: listening on TCP port 6806
+2018-04-30 20:54:20.314625 [NOTICE] [../../../src/DownloadEngine.cc:248] Shutdown sequence commencing... Press Ctrl-C again for emergency shutdown.
+2018-04-30 20:54:20.321354 [NOTICE] [../../../src/MultiUrlRequestInfo.cc:342] Serialized session to './static/.aria2/aria2.session' successfully.
+2018-04-30 20:54:27.909882 [WARN] [../../../src/DownloadEngineFactory.cc:201] Neither --rpc-secret nor a combination of --rpc-user and --rpc-passwd is set. This is insecure. It is extremely recommended to specify --rpc-secret with the adequate secrecy or now deprecated --rpc-user and --rpc-passwd.
+2018-04-30 20:54:27.910179 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv4 RPC: listening on TCP port 6806
+2018-04-30 20:54:27.910239 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv6 RPC: listening on TCP port 6806
+2018-04-30 21:48:41.586318 [NOTICE] [../../../src/DownloadEngine.cc:248] Shutdown sequence commencing... Press Ctrl-C again for emergency shutdown.
+2018-04-30 21:48:41.589299 [NOTICE] [../../../src/MultiUrlRequestInfo.cc:342] Serialized session to './static/.aria2/aria2.session' successfully.
+2018-04-30 21:49:29.959021 [WARN] [../../../src/DownloadEngineFactory.cc:201] Neither --rpc-secret nor a combination of --rpc-user and --rpc-passwd is set. This is insecure. It is extremely recommended to specify --rpc-secret with the adequate secrecy or now deprecated --rpc-user and --rpc-passwd.
+2018-04-30 21:49:29.959312 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv4 RPC: listening on TCP port 6806
+2018-04-30 21:49:29.959419 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv6 RPC: listening on TCP port 6806
+2018-04-30 21:57:41.879868 [NOTICE] [../../../src/DownloadEngine.cc:248] Shutdown sequence commencing... Press Ctrl-C again for emergency shutdown.
+2018-04-30 21:57:41.881614 [NOTICE] [../../../src/MultiUrlRequestInfo.cc:342] Serialized session to './static/.aria2/aria2.session' successfully.
+2018-04-30 21:57:48.239804 [WARN] [../../../src/DownloadEngineFactory.cc:201] Neither --rpc-secret nor a combination of --rpc-user and --rpc-passwd is set. This is insecure. It is extremely recommended to specify --rpc-secret with the adequate secrecy or now deprecated --rpc-user and --rpc-passwd.
+2018-04-30 21:57:48.245435 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv4 RPC: listening on TCP port 6806
+2018-04-30 21:57:48.245606 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv6 RPC: listening on TCP port 6806
+2018-04-30 21:58:06.678567 [NOTICE] [../../../src/DownloadEngine.cc:248] Shutdown sequence commencing... Press Ctrl-C again for emergency shutdown.
+2018-04-30 21:58:06.679292 [NOTICE] [../../../src/MultiUrlRequestInfo.cc:342] Serialized session to './static/.aria2/aria2.session' successfully.
+2018-04-30 21:58:13.886721 [WARN] [../../../src/DownloadEngineFactory.cc:201] Neither --rpc-secret nor a combination of --rpc-user and --rpc-passwd is set. This is insecure. It is extremely recommended to specify --rpc-secret with the adequate secrecy or now deprecated --rpc-user and --rpc-passwd.
+2018-04-30 21:58:13.887022 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv4 RPC: listening on TCP port 6806
+2018-04-30 21:58:13.887279 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv6 RPC: listening on TCP port 6806
+2018-04-30 21:58:28.805624 [NOTICE] [../../../src/DownloadEngine.cc:248] Shutdown sequence commencing... Press Ctrl-C again for emergency shutdown.
+2018-04-30 21:58:28.806346 [NOTICE] [../../../src/MultiUrlRequestInfo.cc:342] Serialized session to './static/.aria2/aria2.session' successfully.
+2018-04-30 21:58:35.983209 [WARN] [../../../src/DownloadEngineFactory.cc:201] Neither --rpc-secret nor a combination of --rpc-user and --rpc-passwd is set. This is insecure. It is extremely recommended to specify --rpc-secret with the adequate secrecy or now deprecated --rpc-user and --rpc-passwd.
+2018-04-30 21:58:35.983505 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv4 RPC: listening on TCP port 6806
+2018-04-30 21:58:35.983574 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv6 RPC: listening on TCP port 6806
+2018-04-30 22:28:38.227131 [NOTICE] [../../../src/DownloadEngine.cc:248] Shutdown sequence commencing... Press Ctrl-C again for emergency shutdown.
+2018-04-30 22:28:38.236283 [NOTICE] [../../../src/MultiUrlRequestInfo.cc:342] Serialized session to './static/.aria2/aria2.session' successfully.

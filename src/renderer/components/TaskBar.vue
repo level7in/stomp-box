@@ -35,6 +35,8 @@ export default {
   background-color: $main-color;
   height: 50px;
   border-bottom: 1px solid #ddd;
-  -webkit-app-region: drag
+  -webkit-app-region: drag;
+  /*-webkit-backdrop-filter:saturate(180%) blur(20px);*/
+  /*background-color: rgba(255,255,255,0.7);*/
 }
 </style>
