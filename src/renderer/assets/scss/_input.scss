@@ -1,0 +1,57 @@
+@import "../../../variable";
+$danger-color: #f56c6c;
+
+input[type="text"]{
+  box-sizing: border-box;
+  width: 100%;
+  height: 33px;
+  font-size: 16px;
+  padding:0 6px;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  outline: none;
+  background-color: rgba(9, 30, 66, 0.04);
+  &:focus{
+    border: 1px solid $heavy-color;
+    box-shadow: 0 0 0 1px $heavy-color inset;
+    transition: all 10ms;
+  }
+}
+
+input[type="button"]{
+  box-sizing: border-box;
+  width: 45%;
+  height: 33px;
+  font-size: 16px;
+  padding:0 6px;
+  border-radius: 3px;
+  background-color: rgba(9, 30, 66, 0.04);
+  outline: none;
+  cursor: pointer;
+  color: #fff;
+  &[class="primary"]{
+    border: 2px solid $heavy-color;
+    background-color: $heavy-color;
+    &:active{
+      box-shadow: 0 0 0 3px $button-shadow;
+    }
+    &:hover{
+      border: 2px solid darken($heavy-color, 10%);
+      background-color: darken($heavy-color, 10%);
+    }
+  }
+  &[class="danger"]{
+    border: 2px solid $danger-color;
+    background-color: $danger-color;
+    &:active{
+      box-shadow: 0 0 0 3px $button-shadow;
+    }
+    &:hover{
+      border: 2px solid darken($danger-color, 10%);
+      background-color: darken($danger-color, 10%);
+    }
+  }
+
+
+
+}

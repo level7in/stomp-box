@@ -5,9 +5,8 @@ $color-checked: #4C9AFE;
 $color-unchecked: #7f7f7f;
 $color-disabled: #eee;
 .switch {
-  width: 60px;
   height: $height;
-  margin: 10px 0;
+  margin: 5px 0;
   vertical-align: middle;
   position: relative;
 }
@@ -49,8 +48,8 @@ $color-disabled: #eee;
 }
 
 .switch-checkbox:disabled + .switch-label {
-  background-color: #eee;
-  border-color: #eee;
+  background-color: #ffffff;
+  border-color: #ebebeb;
 }
 .switch-checkbox:disabled + .switch-label:before {
   border-color: $color-disabled;

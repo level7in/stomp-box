@@ -3,20 +3,8 @@ import Vuex from 'vuex'
 import Aria2 from 'aria2'
 // 引入Vuex-状态管理
 Vue.use(Vuex)
-const options = [
-  {'host': 'localhost', 'port': 6806, 'secure': false},
-  {'host': '192.168.123.1', 'port': 6800, 'secure': false}
-  // {'host': '127.0.0.1', 'port': 6800, 'secure': false, 'secret': '7in'}
-]
-const aria2 = new Aria2(options[0])
-
-aria2.onopen = function () {
-  console.log('web-socket OPEN')
-}
-aria2.open(function () {
-  console.log(aria2)
-})
-
+// rpc 通信 参数
+let aria2
 // 用于 setInterval clearInterval 控制
 let tell0, tell1, tell2
 
@@ -29,8 +17,11 @@ const store = new Vuex.Store({
     // 是否显示设置面板
     isSetting: false,
     // 任务信息刷新间隔
-    heart: 2000,
-    // 项目选择
+    heart: 1000,
+    options: [],
+    // 设备选择
+    isConnected: false,
+    selectOption: 0,
     // checkedNames: [],
     // 菜单面板选项 => TaskMenu.vue
     menuItems: [
@@ -50,19 +41,13 @@ const store = new Vuex.Store({
       },
       {
         id: 2,
-        name: '任务出错',
-        ico: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-octagon"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12" y2="16"></line></svg>',
-        sum: 0,
-        active: false
-      },
-      {
-        id: 3,
         name: '已完成',
         ico: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-inbox"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path></svg>',
         sum: 0,
         active: false
       }
     ],
+    menuItemActive: 0,
     // 任务面板选项 => TaskBarItems.vue
     taskBarItems: [
       {
@@ -96,10 +81,30 @@ const store = new Vuex.Store({
     // 正在下载
     DownloadResult: [],
     // 全局设置选项
-    GlobalOption: {}
+    GlobalOption: {},
+    // 设备卡片 事件触发的 x，y 坐标及 index
+    deviceCard: {},
+    // 是否显示设备卡片
+    isDeviceCard: false
   },
   //
   actions: {
+    aria2Init ({commit, state}) {
+      if (localStorage.length === 0) {
+        state.options = [{'host': 'localhost', 'port': 6806, 'secure': false, secret: '', path: '/jsonrpc'}]
+        localStorage.setItem('options', JSON.stringify(state.options))
+      } else {
+        state.options = JSON.parse(localStorage.getItem('options'))
+      }
+      // 开启 aria2
+      aria2 = new Aria2(state.options[0])
+      state.isConnected = true
+    },
+    aria2Switch ({commit, state}, index) {
+      // 开启
+      aria2 = new Aria2(state.options[index])
+      state.selectOption = index
+    },
     tellActive ({commit, state}) {
       clearInterval(tell1)
       clearInterval(tell2)
@@ -144,6 +149,7 @@ const store = new Vuex.Store({
     menuActive (state, id) {
     //  激活菜单按钮 Active
       state.menuItems[id].active = true
+      state.menuItemActive = id
     },
     isSetting (state) {
     //  更改设置面板状态
@@ -156,39 +162,41 @@ const store = new Vuex.Store({
         function (res) {
           state.DownloadResult.splice(res.length)
           res.forEach((resItem, index) => {
-            Vue.set(state.DownloadResult, index, resItem)
+            state.DownloadResult[index] = resItem
           })
         },
         function (err) {
+          state.isConnected = false
+          state.DownloadResult.splice(0)
           console.log('tellActive-error', err)
         }
       )
     },
     //
     tellWaiting (state) {
-      aria2.tellWaiting(0, 100).then(
+      aria2.tellWaiting(-1, 100).then(
         function (res) {
           state.DownloadResult.splice(res.length)
           res.forEach((resItem, index) => {
             Vue.set(state.DownloadResult, index, resItem)
           })
-        },
-        function (err) {
-          console.log('tellWaiting-error', err)
         }
+        // function (err) {
+        //   console.log('tellWaiting-error', err)
+        // }
       )
     },
     tellStopped (state) {
-      aria2.tellStopped(0, 200).then(
+      aria2.tellStopped(-1, 200).then(
         function (res) {
           state.DownloadResult.splice(res.length)
           res.forEach((resItem, index) => {
             Vue.set(state.DownloadResult, index, resItem)
           })
-        },
-        function (err) {
-          console.log('tellStopped-error', err)
         }
+        // function (err) {
+        //   console.log('tellStopped-error', err)
+        // }
       )
     },
 
@@ -200,14 +208,14 @@ const store = new Vuex.Store({
           // numWaiting
           state.menuItems[1].sum = res.numWaiting
           // numStopped
-          state.menuItems[3].sum = res.numStopped
+          state.menuItems[2].sum = res.numStopped
           //  全局速度
           Vue.set(state.dashBoard, 0, res.uploadSpeed)
           Vue.set(state.dashBoard, 1, res.downloadSpeed)
-        },
-        function (err) {
-          console.log('getGlobalStat-error', err)
         }
+        // function (err) {
+        //   console.log('getGlobalStat-error', err)
+        // }
 
       )
     },
@@ -215,17 +223,42 @@ const store = new Vuex.Store({
     getGlobalOption (state) {
       aria2.getGlobalOption().then(
         function (res) {
+          for (let option in res) {
+            if (res[option] === 'false') {
+              res[option] = false
+            } else if (res[option] === 'true') {
+              res[option] = true
+            }
+          }
           state.GlobalOption = res
         },
         function (err) {
           console.log('getGlobalOption-error', err)
         }
       )
+    },
+    devPanelEdit (state, pos) {
+      // 发送设备右键点击事件触发的位置和索引
+      state.deviceCard = pos
+    },
+    changeDeviceCard (state) {
+      // 更改设备卡片是否出现
+      state.isDeviceCard = !state.isDeviceCard
+    },
+    addCardOption (state) {
+      // 添加新的设备
+      state.options.push({'host': 'localhost', 'port': 6800, 'secure': false, secret: '', path: '/jsonrpc'})
+    },
+    deleteCardOption (state, index) {
+      // 删除设备
+      state.options.splice(index, 1)
+    },
+    saveOptions (state) {
+      // 将设备存储到 localstorage
+      localStorage.setItem('options', JSON.stringify(state.options))
     }
-
   },
   getters: {
-
   }
 })
 

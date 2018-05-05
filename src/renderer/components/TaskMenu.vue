@@ -1,6 +1,7 @@
 <template>
   <div  class="bp-lp">
     <task-menu-item v-for="mItem in menuItems" :key="mItem.id" :mItem="mItem"></task-menu-item>
+
   </div>
 </template>
 
@@ -14,7 +15,6 @@ export default {
     data () {
       return {
         menuItems: this.$store.state.menuItems
-
       }
     }
   }

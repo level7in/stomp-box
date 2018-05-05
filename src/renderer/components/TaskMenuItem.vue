@@ -27,10 +27,8 @@
             case 1:
               this.$store.dispatch('tellWaiting')
               break
-            case 2:break
-            case 3:
+            case 2:
               this.$store.dispatch('tellStopped')
-              break
           }
         }
       }

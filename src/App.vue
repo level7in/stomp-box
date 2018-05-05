@@ -19,6 +19,8 @@
     <url-panel v-show="isUrlPanel"></url-panel>
     <!--设置面板-->
     <setting v-show="isSetting"></setting>
+    <!--aria2 地址编辑-->
+    <DeviceCard v-if="isDeviceCard"></DeviceCard>
   </div>
 </template>
 
@@ -30,6 +32,8 @@ import TaskMenu from './renderer/components/TaskMenu'
 import TaskBar from './renderer/components/TaskBar'
 import TaskPanel from './renderer/components/TaskPanel.vue'
 import Setting from './renderer/components/Setting.vue'
+import DeviceCard from './renderer/components/DeviceCard'
+
 export default {
   components: {
     TaskBar,
@@ -38,10 +42,12 @@ export default {
     DevicePanel,
     TaskMenu,
     TaskPanel,
-    Setting
+    Setting,
+    DeviceCard
   },
   name: 'app',
-  created () {
+  beforeCreate () {
+    this.$store.dispatch('aria2Init')
     this.$store.dispatch('tellActive')
     this.$store.dispatch('getGlobalStat')
   },
@@ -57,8 +63,10 @@ export default {
     },
     isSetting () {
       return this.$store.state.isSetting
+    },
+    isDeviceCard () {
+      return this.$store.state.isDeviceCard
     }
-
   },
   methods: {
 

@@ -1,0 +1,17 @@
+textarea{
+  box-sizing: border-box;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  font-size: 12px;
+  padding:6px;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  outline: none;
+  background-color: rgba(9, 30, 66, 0.04);
+  &:focus{
+    border: 1px solid #4C9AFE;
+    box-shadow: 0 0 0 1px #4C9AFE inset;
+    transition: all 10ms;
+  }
+}
