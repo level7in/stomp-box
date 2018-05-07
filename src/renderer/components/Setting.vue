@@ -64,7 +64,9 @@
         <!--连接设置-->
 
         <section class="tab-page" v-show="tabs[0].switch">
-
+          <h4>Aria2引擎版本：v{{getVersion.version}} - 已连接</h4>
+          <hr>
+          <h5 v-for="item in getVersion.enabledFeatures">√ {{item}}</h5>
         </section>
 
         <section class="tab-page" v-show="tabs[1].switch">
@@ -524,15 +526,18 @@
         <section class="tab-page" v-show="tabs[7].switch">
           <div class="between">
             <h4>下载 Metalink 中的文件</h4>
-            <input type="text" class="small-input" v-model="GlobalOption['follow-metalink']">
+            <div class="switch">
+              <input type="checkbox" class="switch-checkbox" id="checkbox7-0" v-model="GlobalOption['follow-metalink']">
+              <label for="checkbox7-0" class="switch-label"/>
+            </div>
           </div>
           <hr>
 
           <div class="between">
             <h4>仅使用唯一协议</h4>
             <div class="switch">
-              <input type="checkbox" class="switch-checkbox" id="checkbox7-0" v-model="GlobalOption['metalink-enable-unique-protocol']">
-              <label for="checkbox7-0" class="switch-label"/>
+              <input type="checkbox" class="switch-checkbox" id="checkbox7-1" v-model="GlobalOption['metalink-enable-unique-protocol']">
+              <label for="checkbox7-1" class="switch-label"/>
             </div>
           </div>
           <hr>
@@ -644,13 +649,17 @@
         }
       },
       computed: {
-        GlobalOption: function () {
+        GlobalOption () {
           return this.$store.state.GlobalOption
+        },
+        getVersion () {
+          return this.$store.state.version
         }
       },
       methods: {
         isSetting: function () {
           this.$store.commit('isSetting')
+          this.$store.dispatch('globalSet')
         },
         switchTab: function (num) {
           this.tabs.forEach((tab) => {

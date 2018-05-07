@@ -3,8 +3,8 @@
   <label class="task-panel-item" :for="'id-' + index">
     <!--任务名-->
     <div class="between">
-      <div class="title" @click="boring">{{taskName}}</div>
-      <div class="present" :style="{ backgroundColor: bgColor}">
+      <div class="title">{{taskName}}</div>
+      <div class="present" :style="{ backgroundColor: bgColor}" @click.self.prevent="boring">
         {{ present }}%
       </div>
     </div>
@@ -70,7 +70,7 @@
         convert (input) {
           input = input * 1
           if (input < 1024) {
-            return input.toFixed()
+            return input.toFixed(1)
           } else {
             input = input / 1024
             return this.convert(input)
@@ -105,7 +105,7 @@
           } else if (this.DownloadItem.errorCode !== '0' && this.DownloadItem.hasOwnProperty('errorCode')) {
             // 错误
             this.type = 'error'
-            return `错误 (${this.DownloadItem.errorCode})：${this.DownloadItem.errorMessage}`
+            return `错误 (${this.DownloadItem.errorCode}):${this.DownloadItem.files[0].path.slice(this.DownloadItem.dir.length + 1)}`
           } else if (this.DownloadItem.files[0].path.indexOf('[METADATA]') === 0) {
             // 磁力链接元数据
             this.type = 'meta'
@@ -125,7 +125,29 @@
           } else if (this.menuStatus === 1) {
             return '已暂停'
           } else {
-            let time = (this.DownloadItem.totalLength / this.DownloadItem.downloadSpeed).toFixed()
+            let time
+            if (this.type === 'bt') {
+              // 是否做种状态
+              if (this.DownloadItem.seeder === true) {
+                if (this.DownloadItem.uploadSpeed === '0') {
+                  // 上传速度为0
+                  return '未知'
+                }
+                // 上传任务结束时间
+                time = ((this.DownloadItem.totalLength - this.DownloadItem.uploadLength) / this.DownloadItem.uploadSpeed).toFixed()
+              } else {
+                if (this.DownloadItem.downloadSpeed === '0') {
+                  // 下载速度为0
+                  return '未知'
+                }
+                time = (this.DownloadItem.totalLength - this.DownloadItem.completedLength / this.DownloadItem.downloadSpeed).toFixed()
+              }
+            } else if (this.DownloadItem.downloadSpeed === '0') {
+              // 下载速度为0
+              return '未知'
+            } else {
+              time = ((this.DownloadItem.totalLength - this.DownloadItem.completedLength) / this.DownloadItem.downloadSpeed).toFixed()
+            }
             let h = Math.floor(time / 3600 % 24)
             let m = Math.floor(time / 60 % 60)
             if (h < 1) {
@@ -141,25 +163,45 @@
           if (this.DownloadItem.totalLength === '0') {
             return 0
           }
+          if (this.type === 'bt' && this.DownloadItem.seeder === 'true') {
+            // 上传百分比
+            return (this.DownloadItem.uploadLength / this.DownloadItem.totalLength * 100).toFixed()
+          }
+          // 下载百分比
           return (this.DownloadItem.completedLength / this.DownloadItem.totalLength * 100).toFixed()
         },
         speed () {
           if (this.menuStatus === 0) {
-            return this.unit(this.DownloadItem.downloadSpeed)
+            if (this.type === 'bt' && this.DownloadItem.seeder === 'true') {
+              // 做种速度
+              return this.unit(this.DownloadItem.uploadSpeed)
+            } else {
+              // 下载速度
+              return this.unit(this.DownloadItem.downloadSpeed)
+            }
           } else {
             return '----'
           }
         },
         connections () {
           if (this.menuStatus === 0) {
-            return this.DownloadItem.numSeeders + ' / ' + this.DownloadItem.connections
+            if (this.type === 'bt') {
+              return this.DownloadItem.numSeeders + ' / ' + this.DownloadItem.connections
+            } else {
+              return '- / ' + this.DownloadItem.connections
+            }
           } else {
             return '-- / --'
           }
         },
         bgColor () {
           if (this.menuStatus === 0) {
-            return '#4C9AFE'
+            // bt 做种
+            if (this.type === 'bt' && this.DownloadItem.seeder === 'true') {
+              return '#42b983'
+            } else {
+              return '#4C9AFE'
+            }
           } else if (this.menuStatus === 1) {
             return '#E6A23C'
           } else if (this.menuStatus === 2) {
@@ -205,7 +247,7 @@
     color: #fff;
     background-color: #4C9AFE;
     border-radius: 5px;
-
+    cursor: pointer;
   }
   .task-msg{
     font-size: 12px;
@@ -234,7 +276,6 @@
     white-space: nowrap;
     overflow:hidden;
     text-overflow: ellipsis;
-    cursor: pointer;
     /*&:hover{*/
       /*white-space: normal;*/
       /*transition: height 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);*/

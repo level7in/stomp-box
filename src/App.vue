@@ -18,9 +18,11 @@
     <!--新建任务面板-->
     <url-panel v-show="isUrlPanel"></url-panel>
     <!--设置面板-->
-    <setting v-show="isSetting"></setting>
+    <setting v-if="isSetting"></setting>
     <!--aria2 地址编辑-->
     <DeviceCard v-if="isDeviceCard"></DeviceCard>
+    <!--快捷设置-->
+    <quick-set v-if="isQuickSet"></quick-set>
   </div>
 </template>
 
@@ -33,6 +35,7 @@ import TaskBar from './renderer/components/TaskBar'
 import TaskPanel from './renderer/components/TaskPanel.vue'
 import Setting from './renderer/components/Setting.vue'
 import DeviceCard from './renderer/components/DeviceCard'
+import QuickSet from './renderer/components/QuickSet'
 
 export default {
   components: {
@@ -43,7 +46,9 @@ export default {
     TaskMenu,
     TaskPanel,
     Setting,
-    DeviceCard
+    DeviceCard,
+    QuickSet
+
   },
   name: 'app',
   beforeCreate () {
@@ -66,6 +71,9 @@ export default {
     },
     isDeviceCard () {
       return this.$store.state.isDeviceCard
+    },
+    isQuickSet () {
+      return this.$store.state.isQuickSet
     }
   },
   methods: {

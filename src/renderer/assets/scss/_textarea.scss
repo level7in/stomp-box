@@ -8,6 +8,7 @@ textarea{
   border-radius: 3px;
   border: 1px solid #ddd;
   outline: none;
+  white-space: pre-line;
   background-color: rgba(9, 30, 66, 0.04);
   &:focus{
     border: 1px solid #4C9AFE;

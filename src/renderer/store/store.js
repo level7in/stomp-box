@@ -10,12 +10,14 @@ let tell0, tell1, tell2
 
 const store = new Vuex.Store({
   state: {
-    version: '123',
+    version: null,
 
     // 是否显示新建任务面板 => UrlPanel.vue
     isUrlPanel: false,
     // 是否显示设置面板
     isSetting: false,
+    // 是否显示快捷面板
+    isQuickSet: false,
     // 任务信息刷新间隔
     heart: 1000,
     options: [],
@@ -85,7 +87,13 @@ const store = new Vuex.Store({
     // 设备卡片 事件触发的 x，y 坐标及 index
     deviceCard: {},
     // 是否显示设备卡片
-    isDeviceCard: false
+    isDeviceCard: false,
+    // 活动任务选择
+    checkedActiveNames: [],
+    // 等待任务选择
+    checkedWaitNames: [],
+    // 停止任务选择
+    checkedStopNames: []
   },
   //
   actions: {
@@ -98,12 +106,34 @@ const store = new Vuex.Store({
       }
       // 开启 aria2
       aria2 = new Aria2(state.options[0])
-      state.isConnected = true
+      // state.isConnected = true
+      // 链接是否成功
+      aria2.getVersion().then(
+        function (res) {
+          state.version = res
+          state.isConnected = true
+        },
+        function (err) {
+          console.log(err)
+          state.isConnected = false
+        }
+      )
     },
     aria2Switch ({commit, state}, index) {
       // 开启
       aria2 = new Aria2(state.options[index])
       state.selectOption = index
+      // 链接是否成功
+      aria2.getVersion().then(
+        function (res) {
+          state.version = res
+          state.isConnected = true
+        },
+        function (err) {
+          console.log(err)
+          state.isConnected = false
+        }
+      )
     },
     tellActive ({commit, state}) {
       clearInterval(tell1)
@@ -133,6 +163,87 @@ const store = new Vuex.Store({
     },
     getGlobalOption ({commit}) {
       commit('getGlobalOption')
+    },
+    addUri ({commit}, urls) {
+      console.log(urls)
+      aria2.addUri(
+        urls,
+        function (err, gid) {
+          console.log(err || 'gid: ' + gid)
+        })
+    },
+    taskBegin ({commit, state}) {
+      let x = state.checkedWaitNames
+      x.forEach(function (name) {
+        aria2.unpause(
+          name,
+          function (err, gid) {
+            console.log(err || 'gid: ' + gid)
+          }
+        )
+      })
+    },
+    taskWait ({commit, state}) {
+      let x = state.checkedActiveNames
+      x.forEach(function (name) {
+        aria2.pause(
+          name,
+          function (err, gid) {
+            console.log(err || 'gid: ' + gid)
+          }
+        )
+      })
+    },
+    taskDelete ({commit, state}) {
+      let x
+      switch (state.selectOption) {
+        case 0:
+          x = state.checkedActiveNames
+          break
+        case 1:
+          x = state.checkedWaitNames
+          break
+        case 2:
+          x = state.checkedStopNames
+          break
+      }
+      console.log(x)
+      x.forEach(function (name) {
+        aria2.remove(
+          name,
+          function (err, gid) {
+            console.log(err || 'gid: ' + gid)
+          }
+        )
+      })
+    },
+    quickSet ({commit, state}) {
+      aria2.changeGlobalOption(
+        {
+          'max-overall-download-limit': state.GlobalOption['max-overall-download-limit'],
+          'max-overall-upload-limit': state.GlobalOption['max-overall-upload-limit'],
+          'max-concurrent-downloads': state.GlobalOption['max-concurrent-downloads'],
+          'max-connection-per-server': state.GlobalOption['max-connection-per-server']
+        },
+        function (err, ok) {
+          console.log(err || 'OK?: ' + ok)
+        }
+      )
+    },
+    globalSet ({commit, state}) {
+      for (let option in state.GlobalOption) {
+        if (state.GlobalOption[option] === false) {
+          state.GlobalOption[option] = 'false'
+        } else if (state.GlobalOption[option] === 'true') {
+          state.GlobalOption[option] = 'true'
+        }
+      }
+      aria2.changeGlobalOption(
+        state.GlobalOption,
+        function (err, ok) {
+          console.log(err || 'OK?: ' + ok)
+        }
+      )
     }
   },
 
@@ -149,13 +260,20 @@ const store = new Vuex.Store({
     menuActive (state, id) {
     //  激活菜单按钮 Active
       state.menuItems[id].active = true
+      // 取消选中任务
+      state.checkedActiveNames = []
+      state.checkedWaitNames = []
+      state.checkedStopNames = []
+      // 选项卡激活
       state.menuItemActive = id
     },
     isSetting (state) {
     //  更改设置面板状态
       state.isSetting = !state.isSetting
     },
-
+    changeQuickSet (state) {
+      state.isQuickSet = !state.isQuickSet
+    },
     //  初始化 下载列表
     tellActive (state) {
       aria2.tellActive().then(
@@ -164,12 +282,10 @@ const store = new Vuex.Store({
           res.forEach((resItem, index) => {
             state.DownloadResult[index] = resItem
           })
-        },
-        function (err) {
-          state.isConnected = false
-          state.DownloadResult.splice(0)
-          console.log('tellActive-error', err)
         }
+        // function (err) {
+        //   console.log('tellActive-error', err)
+        // }
       )
     },
     //
@@ -256,6 +372,15 @@ const store = new Vuex.Store({
     saveOptions (state) {
       // 将设备存储到 localstorage
       localStorage.setItem('options', JSON.stringify(state.options))
+    },
+    saveCheckedActiveNames (state, val) {
+      state.checkedActiveNames = val
+    },
+    saveCheckedWaitNames (state, val) {
+      state.checkedWaitNames = val
+    },
+    saveCheckedStopNames (state, val) {
+      state.checkedStopNames = val
     }
   },
   getters: {

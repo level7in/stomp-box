@@ -1,10 +1,8 @@
 <template>
     <div class="task-panel">
-      <span>{{checkedNames}}</span>
+      <!--<span>{{whoChecked}}</span>-->
       <span v-show="DownloadResult.length === 0" class="no-task">
-        <div class="standby">
-          {{ isConnected }}
-        </div>
+        <img src="../assets/img/launch.svg" alt="lunch" width="40%">
       </span>
 
       <span v-for="(DownloadItem,index) in DownloadResult">
@@ -14,7 +12,7 @@
                 class="download-item"
                 :id="'id-' + index"
                 :value ="DownloadItem.gid"
-                v-model="checkedNames">
+                v-model="whoChecked">
         <!--下载卡片-->
         <task-panel-item
                 :key="index" :index="index"
@@ -38,16 +36,61 @@
     name: 'TaskPanel',
     data () {
       return {
-        DownloadResult: this.$store.state.DownloadResult,
-        checkedNames: []
+        DownloadResult: this.$store.state.DownloadResult
       }
     },
     computed: {
       getMenuStatus () {
         return this.$store.state.menuItemActive
       },
-      isConnected () {
-        return this.$store.state.isConnected
+      whoChecked: {
+        get () {
+          switch (this.getMenuStatus) {
+            case 0:
+              return this.checkedActiveNames
+            case 1:
+              return this.checkedWaitNames
+            case 2:
+              return this.checkedStopNames
+          }
+        },
+        set (val) {
+          switch (this.getMenuStatus) {
+            case 0:
+              this.checkedActiveNames = val
+              break
+            case 1:
+              this.checkedWaitNames = val
+              break
+            case 2:
+              this.checkedStopNames = val
+              break
+          }
+        }
+      },
+      checkedActiveNames: {
+        get () {
+          return this.$store.state.checkedActiveNames
+        },
+        set (val) {
+          this.$store.commit('saveCheckedActiveNames', val)
+        }
+      },
+      checkedWaitNames: {
+        get () {
+          return this.$store.state.checkedWaitNames
+        },
+        set (val) {
+          this.$store.commit('saveCheckedWaitNames', val)
+        }
+      },
+      checkedStopNames: {
+        get () {
+          return this.$store.state.checkedStopNames
+        },
+        set (val) {
+          this.$store.commit('saveCheckedStopNames', val)
+        }
       }
     }
   }
@@ -60,6 +103,7 @@
     flex-direction: column;
     /*align-items: center;*/
     flex: 1;
+    width: 100px;
     overflow-y: scroll;
   }
   .download-item{
@@ -76,18 +120,5 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  .standby{
-    display: flex;
-    color: #fff;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
-    width: 200px;
-    height: 200px;
-    box-shadow: 0 0 0 5px #4C9AFE inset,  0 0 0.5rem rgba(90,97,105,.2);
-    border-radius: 50%;
-    background-color: #4C9AFE;
   }
 </style>

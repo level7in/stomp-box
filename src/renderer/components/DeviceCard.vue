@@ -1,5 +1,6 @@
 <template>
   <div class="musk" @click.self="changeDeviceCard">
+    <div class="delta" :style="{ top: this.$store.state.deviceCard.y+2 + 'px' }"></div>
     <div class="dev-card" :style="{ top: positionCard + 'px' }">
       <h5>地址（host）</h5>
       <input type="text" v-model="panelItemsOptions.host">
@@ -76,34 +77,44 @@
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/scss/musk";
-@import "../assets/scss/input";
-@import "../assets/scss/checkbox";
-.dev-card{
-  width: 235px;
-  height: auto;
-  position: absolute;
-  box-sizing: border-box;
-  padding: 10px;
-  left: 70px;
-  background-color: #fff;
-  box-shadow: rgba(84, 70, 35, 0.3) 0px 6px 20px, rgba(84, 70, 35, 0.14) 0px 1px 3px, rgba(0, 0, 0, 0.08) 0px 0px 1px;
-  border-radius: 3px;
-  transition: all 10ms;
-}
-h5{
-  color: #99999a;
-  margin: 5px 0;
-}
-.between{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-hr{
-  border-bottom: 0px;
-  border-left: 0px;
-  border-right: 0px;
-  border-top: 1px solid #E2E3E4;
-}
+  @import "../assets/scss/musk";
+  @import "../assets/scss/input";
+  @import "../assets/scss/checkbox";
+  .dev-card{
+    width: 235px;
+    height: auto;
+    position: absolute;
+    box-sizing: border-box;
+    padding: 10px;
+    left: 70px;
+    background-color: #fff;
+    box-shadow: rgba(84, 70, 35, 0.3) 0px 6px 20px, rgba(84, 70, 35, 0.14) 0px 1px 3px, rgba(0, 0, 0, 0.08) 0px 0px 1px;
+    border-radius: 3px;
+    transition: all 10ms;
+  }
+  h5{
+    color: #99999a;
+    margin: 5px 0;
+  }
+  .between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  hr{
+    border-bottom: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 1px solid #E2E3E4;
+  }
+  .delta{
+    position: absolute;
+    left: 64px;
+    z-index: 3;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-right: 6px solid #fff;
+    border-bottom: 8px solid transparent;
+  }
 </style>

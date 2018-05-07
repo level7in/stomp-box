@@ -1,7 +1,13 @@
 <template>
   <div class="task-bar">
     <dash-board></dash-board>
-    <task-bar-items v-for="tmItems in taskBarItems" :key="tmItems.id" :tmItems="tmItems"></task-bar-items>
+    <task-bar-items
+            v-for="tmItems in taskBarItems"
+            :key="tmItems.id"
+            :tmItems="tmItems"
+            :menuStatus="getMenuStatus">
+
+    </task-bar-items>
     <task-bar-search></task-bar-search>
   </div>
 
@@ -22,6 +28,13 @@ export default {
     return {
       taskBarItems: this.$store.state.taskBarItems
     }
+  },
+  methods: {
+  },
+  computed: {
+    getMenuStatus () {
+      return this.$store.state.menuItemActive
+    }
   }
 }
 </script>
@@ -36,7 +49,5 @@ export default {
   height: 50px;
   border-bottom: 1px solid #ddd;
   -webkit-app-region: drag;
-  /*-webkit-backdrop-filter:saturate(180%) blur(20px);*/
-  /*background-color: rgba(255,255,255,0.7);*/
 }
 </style>
