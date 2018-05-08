@@ -18,8 +18,14 @@ const store = new Vuex.Store({
     isSetting: false,
     // 是否显示快捷面板
     isQuickSet: false,
+    // 是否显示任务详细信息
+    isTaskDetail: false,
+    // 任务详细信息
+    taskDetail: null,
+    taskDetailGid: null,
     // 任务信息刷新间隔
     heart: 1000,
+    // 设备信息
     options: [],
     // 设备选择
     isConnected: false,
@@ -274,12 +280,23 @@ const store = new Vuex.Store({
     changeQuickSet (state) {
       state.isQuickSet = !state.isQuickSet
     },
+    // 更改任务详细信息面板
+    changeTaskDetail (state) {
+      state.isTaskDetail = !state.isTaskDetail
+    },
+    // 存入任务Gid
+    setTaskDetail (state, gid) {
+      state.taskDetailGid = gid
+    },
     //  初始化 下载列表
     tellActive (state) {
       aria2.tellActive().then(
         function (res) {
           state.DownloadResult.splice(res.length)
           res.forEach((resItem, index) => {
+            if (state.taskDetailGid !== null && state.taskDetailGid === resItem.gid) {
+              state.taskDetail = resItem
+            }
             state.DownloadResult[index] = resItem
           })
         }
@@ -294,6 +311,9 @@ const store = new Vuex.Store({
         function (res) {
           state.DownloadResult.splice(res.length)
           res.forEach((resItem, index) => {
+            if (state.taskDetailGid !== null && state.taskDetailGid === resItem.gid) {
+              state.taskDetail = resItem
+            }
             Vue.set(state.DownloadResult, index, resItem)
           })
         }
@@ -307,6 +327,9 @@ const store = new Vuex.Store({
         function (res) {
           state.DownloadResult.splice(res.length)
           res.forEach((resItem, index) => {
+            if (state.taskDetailGid !== null && state.taskDetailGid === resItem.gid) {
+              state.taskDetail = resItem
+            }
             Vue.set(state.DownloadResult, index, resItem)
           })
         }
@@ -315,7 +338,6 @@ const store = new Vuex.Store({
         // }
       )
     },
-
     getGlobalStat (state) {
       aria2.getGlobalStat().then(
         function (res) {

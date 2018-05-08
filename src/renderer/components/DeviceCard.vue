@@ -92,21 +92,6 @@
     border-radius: 3px;
     transition: all 10ms;
   }
-  h5{
-    color: #99999a;
-    margin: 5px 0;
-  }
-  .between{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  hr{
-    border-bottom: 0px;
-    border-left: 0px;
-    border-right: 0px;
-    border-top: 1px solid #E2E3E4;
-  }
   .delta{
     position: absolute;
     left: 64px;

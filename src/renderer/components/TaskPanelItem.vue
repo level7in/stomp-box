@@ -4,7 +4,7 @@
     <!--任务名-->
     <div class="between">
       <div class="title">{{taskName}}</div>
-      <div class="present" :style="{ backgroundColor: bgColor}" @click.self.prevent="boring">
+      <div class="present" :style="{ backgroundColor: bgColor}" @click.self.prevent="getTaskDetail(DownloadItem.gid)">
         {{ present }}%
       </div>
     </div>
@@ -91,8 +91,9 @@
           }
           return this.convert(input) + units
         },
-        boring () {
-          alert('boring')
+        getTaskDetail (gid) {
+          this.$store.commit('changeTaskDetail')
+          this.$store.commit('setTaskDetail', gid)
         }
       },
       computed: {
@@ -128,7 +129,7 @@
             let time
             if (this.type === 'bt') {
               // 是否做种状态
-              if (this.DownloadItem.seeder === true) {
+              if (this.DownloadItem.seeder === 'true') {
                 if (this.DownloadItem.uploadSpeed === '0') {
                   // 上传速度为0
                   return '未知'
@@ -140,7 +141,7 @@
                   // 下载速度为0
                   return '未知'
                 }
-                time = (this.DownloadItem.totalLength - this.DownloadItem.completedLength / this.DownloadItem.downloadSpeed).toFixed()
+                time = ((this.DownloadItem.totalLength - this.DownloadItem.completedLength) / this.DownloadItem.downloadSpeed).toFixed()
               }
             } else if (this.DownloadItem.downloadSpeed === '0') {
               // 下载速度为0
@@ -148,7 +149,7 @@
             } else {
               time = ((this.DownloadItem.totalLength - this.DownloadItem.completedLength) / this.DownloadItem.downloadSpeed).toFixed()
             }
-            let h = Math.floor(time / 3600 % 24)
+            let h = Math.floor(time / 3600)
             let m = Math.floor(time / 60 % 60)
             if (h < 1) {
               time = m + '分钟'

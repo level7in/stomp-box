@@ -9,3 +9,19 @@
   justify-content: center;
   align-items: center;
 }
+h5{
+  color: #99999a;
+  margin: 5px 0;
+}
+.between{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+hr{
+  border-bottom: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  width: 95%;
+  border-top: 1px solid #E2E3E4;
+}

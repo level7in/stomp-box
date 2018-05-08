@@ -14,15 +14,27 @@
         <task-panel></task-panel>
       </div>
     </div>
+    <transition name="down-fade">
+      <!--新建任务面板-->
+      <url-panel v-show="isUrlPanel"></url-panel>
+    </transition>
+    <transition name="fade">
+      <!--设置面板-->
+      <setting v-if="isSetting"></setting>
+    </transition>
+    <transition name="slide-fade">
+      <!--aria2 地址编辑-->
+      <DeviceCard v-if="isDeviceCard"></DeviceCard>
+    </transition>
+    <transition name="down-fade">
+      <!--快捷设置-->
+      <quick-set v-if="isQuickSet"></quick-set>
+    </transition>
+    <transition name="slide-fade">
+      <!--任务详细信息面板-->
+      <task-detail v-if="isTaskDetail"></task-detail>
+    </transition>
 
-    <!--新建任务面板-->
-    <url-panel v-show="isUrlPanel"></url-panel>
-    <!--设置面板-->
-    <setting v-if="isSetting"></setting>
-    <!--aria2 地址编辑-->
-    <DeviceCard v-if="isDeviceCard"></DeviceCard>
-    <!--快捷设置-->
-    <quick-set v-if="isQuickSet"></quick-set>
   </div>
 </template>
 
@@ -36,6 +48,7 @@ import TaskPanel from './renderer/components/TaskPanel.vue'
 import Setting from './renderer/components/Setting.vue'
 import DeviceCard from './renderer/components/DeviceCard'
 import QuickSet from './renderer/components/QuickSet'
+import TaskDetail from './renderer/components/TaskDetail'
 
 export default {
   components: {
@@ -47,8 +60,8 @@ export default {
     TaskPanel,
     Setting,
     DeviceCard,
-    QuickSet
-
+    QuickSet,
+    TaskDetail
   },
   name: 'app',
   beforeCreate () {
@@ -74,6 +87,9 @@ export default {
     },
     isQuickSet () {
       return this.$store.state.isQuickSet
+    },
+    isTaskDetail () {
+      return this.$store.state.isTaskDetail
     }
   },
   methods: {
@@ -84,25 +100,54 @@ export default {
 </script>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica,'Microsoft JhengHei','Microsoft YaHei', Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /*text-align: center;*/
-  color: #2c3e50;
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-}
-.rp{
-  flex:1;
-  .bp{
-    height: calc(100% - 51px);
+  #app {
+    font-family: 'Avenir', Helvetica,'Microsoft JhengHei','Microsoft YaHei', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /*text-align: center;*/
+    color: #2c3e50;
     display: flex;
-    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
   }
-}
-a {
-  color: #42b983;
-}
+  .rp{
+    flex:1;
+    .bp{
+      height: calc(100% - 51px);
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  a {
+    color: #42b983;
+  }
+  /*透明渐变*/
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .3s;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
+  }
+  /*侧滑*/
+  .slide-fade-enter-active {
+    transition: all .3s ease;
+  }
+  .slide-fade-leave-active {
+    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  }
+  .slide-fade-enter, .slide-fade-leave-to {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  /*下滑*/
+  .down-fade-enter-active {
+    transition: all .3s ease;
+  }
+  .down-fade-leave-active {
+    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  }
+  .down-fade-enter, .slide-fade-leave-to {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
 </style>

@@ -5,32 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="640bc3fc-50a7-4b2b-9265-98c4622a1b18" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/renderer/assets/img/launch.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/components/QuickSet.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/components/SpeedChart.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/components/TaskDetail.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/assets/scss/_input.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/assets/scss/_input.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/assets/scss/_textarea.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/assets/scss/_textarea.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/components/DashBoard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/DashBoard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/assets/scss/_musk.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/assets/scss/_musk.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/components/DeviceCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/DeviceCard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/components/DevicePanel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/DevicePanel.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/components/Setting.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/Setting.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/components/TaskBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/TaskBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/components/TaskBarItems.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/TaskBarItems.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/components/TaskMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/TaskMenu.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/components/TaskPanel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/TaskPanel.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/components/TaskDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/TaskDetail.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/components/TaskPanelItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/TaskPanelItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/components/UrlPanel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/UrlPanel.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/store/modules/Counter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/store/modules/index.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/store/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/.aria2/aria2.conf" beforeDir="false" afterPath="$PROJECT_DIR$/static/.aria2/aria2.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/.aria2/aria2.log" beforeDir="false" afterPath="$PROJECT_DIR$/static/.aria2/aria2.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/.aria2/aria2.session" beforeDir="false" afterPath="$PROJECT_DIR$/static/.aria2/aria2.session" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/aria2c.exe" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -44,49 +27,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="store.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/renderer/store/store.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1072">
-              <caret line="232" column="29" selection-start-line="232" selection-start-column="29" selection-end-line="232" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-                <element signature="e#526#998#0" />
-                <element signature="e#2329#2794#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TaskPanelItem.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/renderer/components/TaskPanelItem.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2651">
-              <caret line="148" column="88" selection-start-line="148" selection-start-column="73" selection-end-line="148" selection-end-column="88" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UrlPanel.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/renderer/components/UrlPanel.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="37" column="7" lean-forward="true" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TaskDetail.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/renderer/components/TaskDetail.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="2" lean-forward="true" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+            <state relative-caret-position="473">
+              <caret line="82" column="40" selection-start-line="82" selection-start-column="40" selection-end-line="82" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="aria2.session" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/static/.aria2/aria2.session">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="6" column="17" lean-forward="true" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="aria2.log" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/.aria2/aria2.log">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -140,7 +100,6 @@
         <option value="$PROJECT_DIR$/.eslintrc.js" />
         <option value="$PROJECT_DIR$/src/index.ejs" />
         <option value="$PROJECT_DIR$/src/renderer/components/TaskMenuItem.vue" />
-        <option value="$PROJECT_DIR$/src/renderer/assets/scss/_musk.scss" />
         <option value="$PROJECT_DIR$/src/variable.scss" />
         <option value="$PROJECT_DIR$/src/renderer/assets/scss/_checkbox.scss" />
         <option value="$PROJECT_DIR$/src/renderer/components/DeviceItem.vue" />
@@ -154,19 +113,20 @@
         <option value="$PROJECT_DIR$/src/renderer/components/TaskBarItems.vue" />
         <option value="$PROJECT_DIR$/src/main/index.js" />
         <option value="$PROJECT_DIR$/src/renderer/components/speedChart.vue" />
-        <option value="$PROJECT_DIR$/src/renderer/components/DeviceCard.vue" />
-        <option value="$PROJECT_DIR$/src/App.vue" />
         <option value="$PROJECT_DIR$/src/renderer/components/DevicePanel.vue" />
-        <option value="$PROJECT_DIR$/src/renderer/components/TaskPanelItem.vue" />
         <option value="$PROJECT_DIR$/static/.aria2/aria2.conf" />
         <option value="$PROJECT_DIR$/src/renderer/components/TaskMenu.vue" />
         <option value="$PROJECT_DIR$/src/renderer/components/SpeedChart.vue" />
-        <option value="$PROJECT_DIR$/src/renderer/components/QuickSet.vue" />
         <option value="$PROJECT_DIR$/src/renderer/components/Setting.vue" />
+        <option value="$PROJECT_DIR$/static/.aria2/aria2.session" />
+        <option value="$PROJECT_DIR$/src/renderer/components/DeviceCard.vue" />
+        <option value="$PROJECT_DIR$/src/renderer/components/QuickSet.vue" />
+        <option value="$PROJECT_DIR$/src/App.vue" />
+        <option value="$PROJECT_DIR$/src/renderer/assets/scss/_musk.scss" />
         <option value="$PROJECT_DIR$/src/renderer/store/store.js" />
+        <option value="$PROJECT_DIR$/src/renderer/components/TaskPanelItem.vue" />
         <option value="$PROJECT_DIR$/src/renderer/components/TaskDetail.vue" />
         <option value="$PROJECT_DIR$/static/.aria2/aria2.log" />
-        <option value="$PROJECT_DIR$/static/.aria2/aria2.session" />
       </list>
     </option>
   </component>
@@ -207,7 +167,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -219,12 +178,6 @@
               <item name="stomp-box" type="b2602c69:ProjectViewProjectNode" />
               <item name="stomp-box" type="462c0819:PsiDirectoryNode" />
               <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stomp-box" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stomp-box" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="icons" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="stomp-box" type="b2602c69:ProjectViewProjectNode" />
@@ -287,6 +240,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -380,12 +334,14 @@
       <workItem from="1525485179387" duration="1774000" />
       <workItem from="1525509416875" duration="18076000" />
       <workItem from="1525570946867" duration="32861000" />
-      <workItem from="1525657862399" duration="22355000" />
+      <workItem from="1525657862399" duration="30844000" />
+      <workItem from="1525707013402" duration="2003000" />
+      <workItem from="1525741719390" duration="4665000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="221527000" />
+    <option name="totallyTimeSpent" value="236684000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="820" extended-state="0" />
@@ -400,16 +356,16 @@
       <window_info id="npm" order="2" sideWeight="0.5020747" side_tool="true" weight="0.17758985" />
       <window_info id="Structure" order="1" sideWeight="0.5020747" side_tool="true" weight="0.17758985" />
       <window_info anchor="bottom" id="CSS-X-Fire" order="8" weight="0.32918397" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49964765" weight="0.6307054" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49964765" weight="0.4273859" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39972338" />
+      <window_info anchor="bottom" id="TypeScript" order="12" weight="0.32918397" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TypeScript" order="12" weight="0.32918397" />
       <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.34024897" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32918397" />
     </layout>
@@ -429,6 +385,37 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/renderer/components/TaskDetail.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="51" column="28" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/renderer/components/TaskPanelItem.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2358">
+          <caret line="131" column="53" selection-start-line="131" selection-start-column="53" selection-end-line="131" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/renderer/store/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5166">
+          <caret line="287" column="17" selection-start-line="287" selection-start-column="4" selection-end-line="287" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/renderer/components/TaskDetail.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.electron-vue/webpack.main.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-21">
@@ -488,13 +475,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/block.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="88" column="16" selection-start-line="88" selection-start-column="16" selection-end-line="88" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.electron-vue/webpack.web.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1140">
@@ -516,24 +496,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/renderer/components/TaskBarSearch.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/renderer/assets/scss/_musk.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -597,9 +563,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="e#245#288#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -614,29 +577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="55" column="10" lean-forward="true" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/electron-builder.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/icons/256x256.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
-          <folding>
-            <element signature="e#610#663#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -661,15 +601,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/renderer/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/.aria2/aria2.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -684,24 +615,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/renderer/components/DeviceCard.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-928">
-          <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/renderer/components/SpeedChart.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="89" column="33" selection-start-line="89" selection-start-column="21" selection-end-line="89" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/renderer/components/QuickSet.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="35" column="44" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -719,50 +636,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/renderer/components/Setting.vue">
+    <entry file="file://$PROJECT_DIR$/src/renderer/components/DeviceCard.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2980">
-          <caret line="657" column="8" lean-forward="true" selection-start-line="657" selection-start-column="8" selection-end-line="657" selection-end-column="8" />
+        <state relative-caret-position="313">
+          <caret line="90" selection-start-line="90" selection-end-line="91" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/renderer/store/store.js">
+    <entry file="file://$PROJECT_DIR$/src/renderer/components/QuickSet.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1072">
-          <caret line="232" column="29" selection-start-line="232" selection-start-column="29" selection-end-line="232" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-            <element signature="e#526#998#0" />
-            <element signature="e#2329#2794#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/renderer/components/TaskPanelItem.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2651">
-          <caret line="148" column="88" selection-start-line="148" selection-start-column="73" selection-end-line="148" selection-end-column="88" />
+        <state relative-caret-position="72">
+          <caret line="4" column="76" selection-start-line="4" selection-start-column="76" selection-end-line="4" selection-end-column="76" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/renderer/components/UrlPanel.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
+        <state relative-caret-position="666">
           <caret line="37" column="7" lean-forward="true" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/.aria2/aria2.log">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/renderer/components/TaskDetail.vue">
+    <entry file="file://$PROJECT_DIR$/src/renderer/components/Setting.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="2" lean-forward="true" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+        <state relative-caret-position="297">
+          <caret line="616" column="41" selection-start-line="616" selection-start-column="41" selection-end-line="616" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/.aria2/aria2.session">
+    <entry file="file://$PROJECT_DIR$/src/renderer/store/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="287" column="17" selection-start-line="287" selection-start-column="4" selection-end-line="287" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/renderer/assets/scss/_musk.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="121" column="18" selection-start-line="121" selection-start-column="10" selection-end-line="121" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/block.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="244" column="16" selection-start-line="244" selection-start-column="16" selection-end-line="244" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/renderer/components/TaskPanelItem.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2381">
+          <caret line="131" column="53" selection-start-line="131" selection-start-column="53" selection-end-line="131" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/renderer/components/TaskDetail.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="82" column="40" selection-start-line="82" selection-start-column="40" selection-end-line="82" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="6" column="17" lean-forward="true" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/.aria2/aria2.log">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
