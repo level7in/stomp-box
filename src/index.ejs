@@ -10,6 +10,12 @@
         user-select: none;
         -webkit-user-select: none;
       }
+      html{
+        scroll-behavior: smooth;
+      }
+      /*::-webkit-scrollbar{*/
+        /*display:none;*/
+      /*}*/
     </style>
     <% if (htmlWebpackPlugin.options.nodeModules) { %>
       <!-- Add `node_modules/` to global paths so `require` works properly in development -->

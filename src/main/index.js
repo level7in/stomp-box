@@ -50,6 +50,7 @@ app.on('activate', () => {
   }
 })
 // aria2 线程
+// `./static/aria2c --conf-path="./static/.aria2/aria2.conf" `
 exec(`./static/aria2c --conf-path="./static/.aria2/aria2.conf" `, function (error, stdout, stderr) {
   if (error) {
     console.error('error: ' + error)

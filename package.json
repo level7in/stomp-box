@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "author": "Qin <level7in@gmail.com>",
   "description": "An electron-vue project",
-  "license": null,
+  "license": "MIT",
   "main": "./dist/electron/main.js",
   "scripts": {
     "build": "node .electron-vue/build.js && electron-builder",
