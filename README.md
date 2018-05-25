@@ -4,11 +4,19 @@
 > An electron-vue project.
 
 ![](./doc/screenshots/index0.png)
-![](./doc/screenshots/index1.png)
-
+![](./doc/screenshots/index2.png)
 ---
 
-#### Build Setup
+### 代办（todo）
+
+- [ ] Windows版的下载功能Bug
+- [ ] 检索功能
+- [ ] 通知
+- [ ] 速度折线图样式 
+- [ ] 零星的Bug 
+---
+
+#### 构建（Build Setup）
 
 ``` bash
 # install dependencies
