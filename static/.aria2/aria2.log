@@ -1,3 +1,0 @@
-2018-05-26 01:15:22.800293 [WARN] [../../../src/DownloadEngineFactory.cc:201] Neither --rpc-secret nor a combination of --rpc-user and --rpc-passwd is set. This is insecure. It is extremely recommended to specify --rpc-secret with the adequate secrecy or now deprecated --rpc-user and --rpc-passwd.
-2018-05-26 01:15:22.807111 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv4 RPC: listening on TCP port 6806
-2018-05-26 01:15:22.807205 [NOTICE] [../../../src/HttpListenCommand.cc:108] IPv6 RPC: listening on TCP port 6806

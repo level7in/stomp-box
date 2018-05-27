@@ -202,26 +202,46 @@ const store = new Vuex.Store({
     },
     taskDelete ({commit, state}) {
       let x
-      switch (state.selectOption) {
+      // 活动和暂停任务删除
+      // 已完成任务删除的方法不同
+      switch (state.menuItemActive) {
         case 0:
           x = state.checkedActiveNames
+          x.forEach(function (name) {
+            console.log(name)
+            aria2.remove(
+              name,
+              function (err, gid) {
+                console.log(err || 'gid: ' + gid)
+              }
+            )
+          })
           break
         case 1:
           x = state.checkedWaitNames
+          x.forEach(function (name) {
+            console.log(name)
+            aria2.remove(
+              name,
+              function (err, gid) {
+                console.log(err || 'gid: ' + gid)
+              }
+            )
+          })
           break
         case 2:
           x = state.checkedStopNames
+          x.forEach(function (name) {
+            console.log(name)
+            aria2.removeDownloadResult(
+              name,
+              function (err, gid) {
+                console.log(err || 'gid: ' + gid)
+              }
+            )
+          })
           break
       }
-      console.log(x)
-      x.forEach(function (name) {
-        aria2.remove(
-          name,
-          function (err, gid) {
-            console.log(err || 'gid: ' + gid)
-          }
-        )
-      })
     },
     quickSet ({commit, state}) {
       aria2.changeGlobalOption(
@@ -240,7 +260,7 @@ const store = new Vuex.Store({
       for (let option in state.GlobalOption) {
         if (state.GlobalOption[option] === false) {
           state.GlobalOption[option] = 'false'
-        } else if (state.GlobalOption[option] === 'true') {
+        } else if (state.GlobalOption[option] === true) {
           state.GlobalOption[option] = 'true'
         }
       }

@@ -49,8 +49,8 @@
             </li>
             <hr>
             <li>
-              <input type="radio" id="tab9" name="tabGroup1" class="tab">
-              <label for="tab9" @click="switchTab(9)">高级选项</label>
+              <!--<input type="radio" id="tab9" name="tabGroup1" class="tab">-->
+              <!--<label for="tab9" @click="switchTab(9)">高级选项</label>-->
             </li>
             <li>
               <input type="radio" id="tab10" name="tabGroup1" class="tab">
