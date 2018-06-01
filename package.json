@@ -1,8 +1,8 @@
 {
   "name": "stomp-box",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "author": "Qin <level7in@gmail.com>",
-  "description": "An electron-vue project",
+  "description": "一个使用electron-vue构建的aria2客户端。",
   "license": "MIT",
   "main": "./dist/electron/main.js",
   "scripts": {
@@ -10,6 +10,9 @@
     "build:dir": "node .electron-vue/build.js && electron-builder --dir",
     "build:clean": "cross-env BUILD_TARGET=clean node .electron-vue/build.js",
     "build:web": "cross-env BUILD_TARGET=web node .electron-vue/build.js",
+    "build:mac" : "node .electron-vue/build.js && electron-builder --mac",
+    "build:win" : "node .electron-vue/build.js && electron-builder --win",
+    "build:linux" : "node .electron-vue/build.js && electron-builder --linux",
     "dev": "node .electron-vue/dev-runner.js",
     "lint": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter src",
     "lint:fix": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter --fix src",

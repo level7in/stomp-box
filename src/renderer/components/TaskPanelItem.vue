@@ -106,7 +106,7 @@
           } else if (this.DownloadItem.errorCode !== '0' && this.DownloadItem.hasOwnProperty('errorCode')) {
             // 错误
             this.type = 'error'
-            return `错误 (${this.DownloadItem.errorCode}):${this.DownloadItem.files[0].path.slice(this.DownloadItem.dir.length + 1)}`
+            return `错误 (${this.DownloadItem.errorCode}):${this.DownloadItem.files[0].path.slice(this.DownloadItem.dir.length + 1)}:${this.DownloadItem.errorMessage}`
           } else if (this.DownloadItem.files[0].path.indexOf('[METADATA]') === 0) {
             // 磁力链接元数据
             this.type = 'meta'

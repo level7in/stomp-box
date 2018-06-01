@@ -47,6 +47,9 @@
       },
       urlDownload () {
         let downUrl = this.urlCheck
+        if (downUrl === 'error') {
+          return
+        }
         this.$store.dispatch('addUri', downUrl)
         this.url = null
         this.$store.commit('changeUrlPanel')

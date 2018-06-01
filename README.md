@@ -7,7 +7,7 @@
 ![](./doc/screenshots/index2.png)
 ---
 
-### 代办（todo）
+### 待办（todo）
 
 - [ ] Windows版的下载功能Bug
 - [ ] 检索功能
@@ -16,16 +16,16 @@
 - [ ] 零星的Bug 
 ---
 
-#### 构建（Build Setup）
+### 构建（Build Setup）
 
 ``` bash
-# install dependencies
+# 安装依赖
 npm install
 
-# serve with hot reload at localhost:9080
+# 开发模式运行
 npm run dev
 
-# build electron application for production
+# 构建安装包
 npm run build
 
 

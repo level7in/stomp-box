@@ -172,11 +172,13 @@ const store = new Vuex.Store({
     },
     addUri ({commit}, urls) {
       console.log(urls)
-      aria2.addUri(
-        urls,
-        function (err, gid) {
-          console.log(err || 'gid: ' + gid)
-        })
+      urls.forEach(function (url) {
+        aria2.addUri(
+          [url],
+          function (err, gid) {
+            console.log(err || 'gid: ' + gid)
+          })
+      })
     },
     taskBegin ({commit, state}) {
       let x = state.checkedWaitNames
