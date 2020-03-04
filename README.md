@@ -7,13 +7,15 @@
 ![](./doc/screenshots/index2.png)
 ---
 
+## 不好意思各位我弃坑了
+
 ### 待办（todo）
 
 - [ ] Windows版的下载功能Bug
 - [ ] 检索功能
 - [ ] 通知
 - [ ] 速度折线图样式 
-- [ ] 零星的Bug 
+- [ ] ~~零星~~海量的Bug 
 ---
 
 ### 构建（Build Setup）
